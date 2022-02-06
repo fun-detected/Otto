@@ -11,6 +11,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
 import java.awt.event.InputEvent
+import java.awt.event.KeyEvent
 
 // Autoclicker and Auto run, need two buttons to toggle on/off listening for two fields where I can bind keypresses/combos
 @Composable
@@ -21,18 +22,18 @@ fun App() {
     MaterialTheme {
         //Auto-Clicker
         Button(onClick = {
+            val bot = Robot()
+            bot.mousePress(InputEvent.BUTTON1_MASK)
+        }){
             text = "I AM SPEED!"
-        }) {
-            public static void click(int x int y) throws AWTException{
-                Robot bot = new Robot();
-                bot.mousePress(InputEvent.BUTTON1_MASK)
         }
         //Auto-run
         Button(onClick = {
-            text = "I am Lazy."
+            val bot = Robot()
+            bot.keyPress(KeyEvent.VK_W)
         }) {
-            Robot bot = new Robot();
-            bot.keyPress(KeyEvent.)
+
+            text = "I am Lazy."
             }
         }
     }
