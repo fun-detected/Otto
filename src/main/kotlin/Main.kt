@@ -10,6 +10,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import java.awt.event.InputEvent
+
 // Autoclicker and Auto run, need two buttons to toggle on/off listening for two fields where I can bind keypresses/combos
 @Composable
 @Preview
@@ -17,15 +19,21 @@ fun App() {
     var text by remember { mutableStateOf("Hello, World!") }
 
     MaterialTheme {
+        //Auto-Clicker
         Button(onClick = {
             text = "I AM SPEED!"
         }) {
-            Text(text)
+            public static void click(int x int y) throws AWTException{
+                Robot bot = new Robot();
+                bot.mousePress(InputEvent.BUTTON1_MASK)
         }
+        //Auto-run
         Button(onClick = {
             text = "I am Lazy."
         }) {
-            Text(text)
+            Robot bot = new Robot();
+            bot.keyPress(KeyEvent.)
+            }
         }
     }
 }
